@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,18 @@ namespace NetStatWPF.Client
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var command = "netstat";
+            var args = "-s";
+            var psi = new ProcessStartInfo(command, args);
+            psi.RedirectStandardOutput = true;
+            psi.UseShellExecute = false;
+            var netStatCommand = Process.Start(psi);
+            //netStatCommand.WaitForExit();
+            Output.Text = netStatCommand.StandardOutput.ReadToEnd();
         }
     }
 }
