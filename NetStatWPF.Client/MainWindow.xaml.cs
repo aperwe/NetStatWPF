@@ -26,7 +26,7 @@ namespace NetStatWPF.Client
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void GetBtn_Click(object sender, RoutedEventArgs e)
         {
             var command = "netstat";
             var args = "-s";
@@ -36,6 +36,11 @@ namespace NetStatWPF.Client
             var netStatCommand = Process.Start(psi);
             //netStatCommand.WaitForExit();
             Output.Text = netStatCommand.StandardOutput.ReadToEnd();
+        }
+
+        private void CloseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
