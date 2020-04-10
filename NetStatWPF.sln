@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetStatWPF.Client", "NetStatWPF.Client\NetStatWPF.Client.csproj", "{2001DBD5-95F0-49E9-ACAD-87C6F0265426}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetStatWPF.Data", "NetStatWPF.Data\NetStatWPF.Data.csproj", "{FCFBBDBF-4C58-4B8E-98EE-BF21BB8C7868}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2001DBD5-95F0-49E9-ACAD-87C6F0265426}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2001DBD5-95F0-49E9-ACAD-87C6F0265426}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2001DBD5-95F0-49E9-ACAD-87C6F0265426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCFBBDBF-4C58-4B8E-98EE-BF21BB8C7868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFBBDBF-4C58-4B8E-98EE-BF21BB8C7868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFBBDBF-4C58-4B8E-98EE-BF21BB8C7868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFBBDBF-4C58-4B8E-98EE-BF21BB8C7868}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

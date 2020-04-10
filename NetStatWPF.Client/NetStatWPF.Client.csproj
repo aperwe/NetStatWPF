@@ -100,5 +100,11 @@
   <ItemGroup>
     <Resource Include="Resources\Network-Cable.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetStatWPF.Data\NetStatWPF.Data.csproj">
+      <Project>{fcfbbdbf-4c58-4b8e-98ee-bf21bb8c7868}</Project>
+      <Name>NetStatWPF.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

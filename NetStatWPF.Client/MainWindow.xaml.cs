@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetStatWPF.Data;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -21,9 +22,11 @@ namespace NetStatWPF.Client
     /// </summary>
     public partial class MainWindow : Window
     {
+        NetStatDataSet netStatDataSet;
         public MainWindow()
         {
             InitializeComponent();
+            netStatDataSet = new NetStatDataSet();
         }
 
         private void GetBtn_Click(object sender, RoutedEventArgs e)
@@ -35,7 +38,10 @@ namespace NetStatWPF.Client
             psi.UseShellExecute = false;
             var netStatCommand = Process.Start(psi);
             //netStatCommand.WaitForExit();
-            Output.Text = netStatCommand.StandardOutput.ReadToEnd();
+            var output = netStatCommand.StandardOutput.ReadToEnd();
+            Output.Text = output;
+            netStatDataSet.MainTable.AddMainTableRow(DateTime.Now, output);
+            NumEntriesTextBlock.Text = string.Format("{0}", netStatDataSet.MainTable.Count);
         }
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
