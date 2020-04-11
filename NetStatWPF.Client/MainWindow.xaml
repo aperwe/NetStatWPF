@@ -10,13 +10,14 @@
         <GroupBox Header="GroupBox" Margin="10,65,10,35">
             <TextBlock x:Name="Output" Margin="0,0,-2,1" TextWrapping="Wrap" Text="TextBlock"/>
         </GroupBox>
-        <Button x:Name="GetBtn" Content="Get" Margin="10,0,0,10" Click="GetBtn_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
-        <Button x:Name="CloseBtn" Content="Close" Margin="0,0,10,10" Click="CloseBtn_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
         <GroupBox Header="GroupBox" Margin="10,10,10,0" Height="55" VerticalAlignment="Top">
             <StackPanel HorizontalAlignment="Left" Height="31" Margin="10,0,0,0" VerticalAlignment="Top" Width="744" Orientation="Horizontal">
                 <Label Content="Number of entries"/>
                 <TextBlock x:Name="NumEntriesTextBlock" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center"/>
             </StackPanel>
         </GroupBox>
+        <Button x:Name="GetBtn" Content="Get" Margin="10,0,0,10" Click="GetBtn_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
+        <Button x:Name="ExportBtn" Content="Export" Margin="90,0,0,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Click="ExportBtn_Click"/>
+        <Button x:Name="CloseBtn" Content="Close" Margin="0,0,10,10" Click="CloseBtn_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
     </Grid>
 </Window>

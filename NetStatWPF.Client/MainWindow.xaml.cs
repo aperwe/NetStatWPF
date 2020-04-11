@@ -48,5 +48,10 @@ namespace NetStatWPF.Client
         {
             Application.Current.Shutdown();
         }
+
+        private void ExportBtn_Click(object sender, RoutedEventArgs e)
+        {
+            netStatDataSet.WriteXml("NetStatWPF.db.xml");
+        }
     }
 }
