@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetStatWPF.Client", "NetSta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetStatWPF.Data", "NetStatWPF.Data\NetStatWPF.Data.csproj", "{FCFBBDBF-4C58-4B8E-98EE-BF21BB8C7868}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetStatWPF.Test", "NetStatWPF.Test\NetStatWPF.Test.csproj", "{39D5035A-7F85-4231-8085-3326ED96CBAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FCFBBDBF-4C58-4B8E-98EE-BF21BB8C7868}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCFBBDBF-4C58-4B8E-98EE-BF21BB8C7868}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCFBBDBF-4C58-4B8E-98EE-BF21BB8C7868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39D5035A-7F85-4231-8085-3326ED96CBAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39D5035A-7F85-4231-8085-3326ED96CBAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39D5035A-7F85-4231-8085-3326ED96CBAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39D5035A-7F85-4231-8085-3326ED96CBAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

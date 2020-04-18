@@ -33,9 +33,11 @@ namespace NetStatWPF.Client
         {
             var command = "netstat";
             var args = "-s";
-            var psi = new ProcessStartInfo(command, args);
-            psi.RedirectStandardOutput = true;
-            psi.UseShellExecute = false;
+            var psi = new ProcessStartInfo(command, args)
+            {
+                RedirectStandardOutput = true,
+                UseShellExecute = false
+            };
             var netStatCommand = Process.Start(psi);
             //netStatCommand.WaitForExit();
             var output = netStatCommand.StandardOutput.ReadToEnd();
