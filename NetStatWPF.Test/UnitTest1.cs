@@ -213,6 +213,110 @@ namespace NetStatWPF.Test
             Assert.AreEqual(0, record.ICMPv4Statistics.Received.RouterAdvertisements);
             Assert.AreEqual(0, record.ICMPv4Statistics.Sent.RouterAdvertisements);
             #endregion
+
+            #region ICMPv6 Statistics
+            //Rest of string from XML: "ICMPv6 StatisticsReceived SentMessages 214 21Errors 0 0Destination Unreachable 0 0Packet Too Big 0 0Time Exceeded 0 0Parameter Problems 0 0Echos 0 0Echo Replies 0 0MLD Queries 0 0MLD Reports 2 0MLD Dones 0 0Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"ICMPv6 StatisticsReceived SentMessages\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.Messages, record.ICMPv6Statistics.Sent.Messages) = tuple;
+            Assert.AreEqual(214, record.ICMPv6Statistics.Received.Messages);
+            Assert.AreEqual(21, record.ICMPv6Statistics.Sent.Messages);
+
+            //Rest of string from XML: "Errors 0 0Destination Unreachable 0 0Packet Too Big 0 0Time Exceeded 0 0Parameter Problems 0 0Echos 0 0Echo Replies 0 0MLD Queries 0 0MLD Reports 2 0MLD Dones 0 0Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Errors\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.Errors, record.ICMPv6Statistics.Sent.Errors) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.Errors);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.Errors);
+
+            //Rest of string from XML: "Destination Unreachable 0 0Packet Too Big 0 0Time Exceeded 0 0Parameter Problems 0 0Echos 0 0Echo Replies 0 0MLD Queries 0 0MLD Reports 2 0MLD Dones 0 0Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Destination Unreachable\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.DestinationUnreachable, record.ICMPv6Statistics.Sent.DestinationUnreachable) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.DestinationUnreachable);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.DestinationUnreachable);
+
+            //Rest of string from XML: "Packet Too Big 0 0Time Exceeded 0 0Parameter Problems 0 0Echos 0 0Echo Replies 0 0MLD Queries 0 0MLD Reports 2 0MLD Dones 0 0Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Packet Too Big\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.PacketTooBig, record.ICMPv6Statistics.Sent.PacketTooBig) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.PacketTooBig);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.PacketTooBig);
+
+            //Rest of string from XML: "Time Exceeded 0 0Parameter Problems 0 0Echos 0 0Echo Replies 0 0MLD Queries 0 0MLD Reports 2 0MLD Dones 0 0Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Time Exceeded\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.TimeExceeded, record.ICMPv6Statistics.Sent.TimeExceeded) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.TimeExceeded);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.TimeExceeded);
+
+            //Rest of string from XML: "Parameter Problems 0 0Echos 0 0Echo Replies 0 0MLD Queries 0 0MLD Reports 2 0MLD Dones 0 0Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Parameter Problems\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.ParameterProblems, record.ICMPv6Statistics.Sent.ParameterProblems) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.ParameterProblems);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.ParameterProblems);
+
+            //Rest of string from XML: "Echos 0 0Echo Replies 0 0MLD Queries 0 0MLD Reports 2 0MLD Dones 0 0Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Echos\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.Echos, record.ICMPv6Statistics.Sent.Echos) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.Echos);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.Echos);
+
+            //Rest of string from XML: "Echo Replies 0 0MLD Queries 0 0MLD Reports 2 0MLD Dones 0 0Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Echo Replies\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.EchoReplies, record.ICMPv6Statistics.Sent.EchoReplies) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.EchoReplies);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.EchoReplies);
+
+            //Rest of string from XML: "MLD Queries 0 0MLD Reports 2 0MLD Dones 0 0Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"MLD Queries\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.MLDQueries, record.ICMPv6Statistics.Sent.MLDQueries) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.MLDQueries);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.MLDQueries);
+
+            //Rest of string from XML: "MLD Reports 2 0MLD Dones 0 0Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"MLD Reports\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.MLDReports, record.ICMPv6Statistics.Sent.MLDReports) = tuple;
+            Assert.AreEqual(2, record.ICMPv6Statistics.Received.MLDReports);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.MLDReports);
+
+            //Rest of string from XML: "MLD Dones 0 0Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"MLD Dones\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.MLDDones, record.ICMPv6Statistics.Sent.MLDDones) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.MLDDones);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.MLDDones);
+
+            //Rest of string from XML: "Router Solicitations 0 9Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Router Solicitations\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.RouterSolicitations, record.ICMPv6Statistics.Sent.RouterSolicitations) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.RouterSolicitations);
+            Assert.AreEqual(9, record.ICMPv6Statistics.Sent.RouterSolicitations);
+
+            //Rest of string from XML: "Router Advertisements 203 0Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Router Advertisements\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.RouterAdvertisements, record.ICMPv6Statistics.Sent.RouterAdvertisements) = tuple;
+            Assert.AreEqual(203, record.ICMPv6Statistics.Received.RouterAdvertisements);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.RouterAdvertisements);
+
+            //Rest of string from XML: "Neighbor Solicitations 1 6Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Neighbor Solicitations\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.NeighborSolicitations, record.ICMPv6Statistics.Sent.NeighborSolicitations) = tuple;
+            Assert.AreEqual(1, record.ICMPv6Statistics.Received.NeighborSolicitations);
+            Assert.AreEqual(6, record.ICMPv6Statistics.Sent.NeighborSolicitations);
+
+            //Rest of string from XML: "Neighbor Advertisements 8 6Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Neighbor Advertisements\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.NeighborAdvertisements, record.ICMPv6Statistics.Sent.NeighborAdvertisements) = tuple;
+            Assert.AreEqual(8, record.ICMPv6Statistics.Received.NeighborAdvertisements);
+            Assert.AreEqual(6, record.ICMPv6Statistics.Sent.NeighborAdvertisements);
+
+            //Rest of string from XML: "Redirects 0 0Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Redirects\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.Redirects, record.ICMPv6Statistics.Sent.Redirects) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.Redirects);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.Redirects);
+
+            //Rest of string from XML: "Router Renumberings 0 0 TCP Statistics for IPv4Active Opens = 19796Passive Opens = 721Failed Connection Attempts = 14385Reset Connections = 863Current Connections = 37Segments Received = 9007968Segments Sent = 14458528Segments Retransmitted = 60816 TCP Statistics for IPv6Active Opens = 144Passive Opens = 19Failed Connection Attempts = 40Reset Connections = 0Current Connections = 0Segments Received = 2115Segments Sent = 1698Segments Retransmitted = 14 UDP Statistics for IPv4Datagrams Received = 287014No Ports = 6306Receive Errors = 6Datagrams Sent = 470359 UDP Statistics for IPv6Datagrams Received = 7511No Ports = 3121Receive Errors = 0Datagrams Sent = 5636 ";
+            tuple = ExtractTwo64BitNumbers(patternString: @"Router Renumberings\D+(?'received'\d+) +(?'sent'\d+)(?'rest'.*)", input: rest, out rest);
+            (record.ICMPv6Statistics.Received.RouterRenumberings, record.ICMPv6Statistics.Sent.RouterRenumberings) = tuple;
+            Assert.AreEqual(0, record.ICMPv6Statistics.Received.RouterRenumberings);
+            Assert.AreEqual(0, record.ICMPv6Statistics.Sent.RouterRenumberings);
+            #endregion
         }
         Int64 Extract64BitNumber(string patternString, string input, out string rest)
         {
@@ -238,6 +342,7 @@ namespace NetStatWPF.Test
                 IPv4Statistics = new IPv4StatisticsClass();
                 IPv6Statistics = new IPv6StatisticsClass();
                 ICMPv4Statistics = new ICMPv4StatisticsClass();
+                ICMPv6Statistics = new ICMPv6StatisticsClass();
             }
             internal class IPv4StatisticsClass
             {
@@ -309,9 +414,31 @@ namespace NetStatWPF.Test
                     public Int64 RouterAdvertisements { get; internal set; }
                 }
             }
-            public IPv4StatisticsClass IPv4Statistics { get; internal set; }
+            internal class ICMPv6StatisticsClass
+            {
+                internal ICMPv6StatisticsClass()
+                {
+                    Received = new ICMPv6StatisticsRecSent();
+                    Sent = new ICMPv6StatisticsRecSent();
+                }
+                public ICMPv6StatisticsRecSent Received { get; internal set; }
+                public ICMPv6StatisticsRecSent Sent { get; internal set; }
+                public class ICMPv6StatisticsRecSent : ICMPv4StatisticsClass.ICMPv4StatisticsRecSent
+                {
+                    public Int64 PacketTooBig { get; internal set; }
+                    public Int64 MLDQueries { get; internal set; }
+                    public Int64 MLDReports { get; internal set; }
+                    public Int64 MLDDones { get; internal set; }
+                    public Int64 NeighborSolicitations { get; internal set; }
+                    public Int64 NeighborAdvertisements { get; internal set; }
+                    public Int64 RouterRenumberings { get; internal set; }
+                }
+            }
+
+                public IPv4StatisticsClass IPv4Statistics { get; internal set; }
             public IPv6StatisticsClass IPv6Statistics { get; internal set; }
             public ICMPv4StatisticsClass ICMPv4Statistics { get; internal set; }
+            public ICMPv6StatisticsClass ICMPv6Statistics { get; internal set; }
 
         }
 
