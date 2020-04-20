@@ -26,6 +26,30 @@ namespace NetStatWPF.Data {
         
         private MainTableDataTable tableMainTable;
         
+        private NetStatDataRecordTableDataTable tableNetStatDataRecordTable;
+        
+        private IPv4StatisticsTableDataTable tableIPv4StatisticsTable;
+        
+        private IPv6StatisticsTableDataTable tableIPv6StatisticsTable;
+        
+        private ICMPv4StatisticsTableDataTable tableICMPv4StatisticsTable;
+        
+        private ICMPv6StatisticsTableDataTable tableICMPv6StatisticsTable;
+        
+        private TCPStatisticsIPv4TableDataTable tableTCPStatisticsIPv4Table;
+        
+        private global::System.Data.DataRelation relationFK_MainTable_NetStatDataRecord;
+        
+        private global::System.Data.DataRelation relationFK_NetStatDataRecord_IPv4Statistics;
+        
+        private global::System.Data.DataRelation relationFK_NetStatDataRecord_IPv6Statistics;
+        
+        private global::System.Data.DataRelation relationFK_NetStatDataRecord_ICMPv4Statistics;
+        
+        private global::System.Data.DataRelation relationFK_NetStatDataRecord_ICMPv6Statistics;
+        
+        private global::System.Data.DataRelation relationFK_NetStatDataRecord_TCPStatisticsIPv4;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +81,24 @@ namespace NetStatWPF.Data {
                 if ((ds.Tables["MainTable"] != null)) {
                     base.Tables.Add(new MainTableDataTable(ds.Tables["MainTable"]));
                 }
+                if ((ds.Tables["NetStatDataRecordTable"] != null)) {
+                    base.Tables.Add(new NetStatDataRecordTableDataTable(ds.Tables["NetStatDataRecordTable"]));
+                }
+                if ((ds.Tables["IPv4StatisticsTable"] != null)) {
+                    base.Tables.Add(new IPv4StatisticsTableDataTable(ds.Tables["IPv4StatisticsTable"]));
+                }
+                if ((ds.Tables["IPv6StatisticsTable"] != null)) {
+                    base.Tables.Add(new IPv6StatisticsTableDataTable(ds.Tables["IPv6StatisticsTable"]));
+                }
+                if ((ds.Tables["ICMPv4StatisticsTable"] != null)) {
+                    base.Tables.Add(new ICMPv4StatisticsTableDataTable(ds.Tables["ICMPv4StatisticsTable"]));
+                }
+                if ((ds.Tables["ICMPv6StatisticsTable"] != null)) {
+                    base.Tables.Add(new ICMPv6StatisticsTableDataTable(ds.Tables["ICMPv6StatisticsTable"]));
+                }
+                if ((ds.Tables["TCPStatisticsIPv4Table"] != null)) {
+                    base.Tables.Add(new TCPStatisticsIPv4TableDataTable(ds.Tables["TCPStatisticsIPv4Table"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +124,66 @@ namespace NetStatWPF.Data {
         public MainTableDataTable MainTable {
             get {
                 return this.tableMainTable;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public NetStatDataRecordTableDataTable NetStatDataRecordTable {
+            get {
+                return this.tableNetStatDataRecordTable;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public IPv4StatisticsTableDataTable IPv4StatisticsTable {
+            get {
+                return this.tableIPv4StatisticsTable;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public IPv6StatisticsTableDataTable IPv6StatisticsTable {
+            get {
+                return this.tableIPv6StatisticsTable;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ICMPv4StatisticsTableDataTable ICMPv4StatisticsTable {
+            get {
+                return this.tableICMPv4StatisticsTable;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ICMPv6StatisticsTableDataTable ICMPv6StatisticsTable {
+            get {
+                return this.tableICMPv6StatisticsTable;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TCPStatisticsIPv4TableDataTable TCPStatisticsIPv4Table {
+            get {
+                return this.tableTCPStatisticsIPv4Table;
             }
         }
         
@@ -155,6 +257,24 @@ namespace NetStatWPF.Data {
                 if ((ds.Tables["MainTable"] != null)) {
                     base.Tables.Add(new MainTableDataTable(ds.Tables["MainTable"]));
                 }
+                if ((ds.Tables["NetStatDataRecordTable"] != null)) {
+                    base.Tables.Add(new NetStatDataRecordTableDataTable(ds.Tables["NetStatDataRecordTable"]));
+                }
+                if ((ds.Tables["IPv4StatisticsTable"] != null)) {
+                    base.Tables.Add(new IPv4StatisticsTableDataTable(ds.Tables["IPv4StatisticsTable"]));
+                }
+                if ((ds.Tables["IPv6StatisticsTable"] != null)) {
+                    base.Tables.Add(new IPv6StatisticsTableDataTable(ds.Tables["IPv6StatisticsTable"]));
+                }
+                if ((ds.Tables["ICMPv4StatisticsTable"] != null)) {
+                    base.Tables.Add(new ICMPv4StatisticsTableDataTable(ds.Tables["ICMPv4StatisticsTable"]));
+                }
+                if ((ds.Tables["ICMPv6StatisticsTable"] != null)) {
+                    base.Tables.Add(new ICMPv6StatisticsTableDataTable(ds.Tables["ICMPv6StatisticsTable"]));
+                }
+                if ((ds.Tables["TCPStatisticsIPv4Table"] != null)) {
+                    base.Tables.Add(new TCPStatisticsIPv4TableDataTable(ds.Tables["TCPStatisticsIPv4Table"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +314,48 @@ namespace NetStatWPF.Data {
                     this.tableMainTable.InitVars();
                 }
             }
+            this.tableNetStatDataRecordTable = ((NetStatDataRecordTableDataTable)(base.Tables["NetStatDataRecordTable"]));
+            if ((initTable == true)) {
+                if ((this.tableNetStatDataRecordTable != null)) {
+                    this.tableNetStatDataRecordTable.InitVars();
+                }
+            }
+            this.tableIPv4StatisticsTable = ((IPv4StatisticsTableDataTable)(base.Tables["IPv4StatisticsTable"]));
+            if ((initTable == true)) {
+                if ((this.tableIPv4StatisticsTable != null)) {
+                    this.tableIPv4StatisticsTable.InitVars();
+                }
+            }
+            this.tableIPv6StatisticsTable = ((IPv6StatisticsTableDataTable)(base.Tables["IPv6StatisticsTable"]));
+            if ((initTable == true)) {
+                if ((this.tableIPv6StatisticsTable != null)) {
+                    this.tableIPv6StatisticsTable.InitVars();
+                }
+            }
+            this.tableICMPv4StatisticsTable = ((ICMPv4StatisticsTableDataTable)(base.Tables["ICMPv4StatisticsTable"]));
+            if ((initTable == true)) {
+                if ((this.tableICMPv4StatisticsTable != null)) {
+                    this.tableICMPv4StatisticsTable.InitVars();
+                }
+            }
+            this.tableICMPv6StatisticsTable = ((ICMPv6StatisticsTableDataTable)(base.Tables["ICMPv6StatisticsTable"]));
+            if ((initTable == true)) {
+                if ((this.tableICMPv6StatisticsTable != null)) {
+                    this.tableICMPv6StatisticsTable.InitVars();
+                }
+            }
+            this.tableTCPStatisticsIPv4Table = ((TCPStatisticsIPv4TableDataTable)(base.Tables["TCPStatisticsIPv4Table"]));
+            if ((initTable == true)) {
+                if ((this.tableTCPStatisticsIPv4Table != null)) {
+                    this.tableTCPStatisticsIPv4Table.InitVars();
+                }
+            }
+            this.relationFK_MainTable_NetStatDataRecord = this.Relations["FK_MainTable_NetStatDataRecord"];
+            this.relationFK_NetStatDataRecord_IPv4Statistics = this.Relations["FK_NetStatDataRecord_IPv4Statistics"];
+            this.relationFK_NetStatDataRecord_IPv6Statistics = this.Relations["FK_NetStatDataRecord_IPv6Statistics"];
+            this.relationFK_NetStatDataRecord_ICMPv4Statistics = this.Relations["FK_NetStatDataRecord_ICMPv4Statistics"];
+            this.relationFK_NetStatDataRecord_ICMPv6Statistics = this.Relations["FK_NetStatDataRecord_ICMPv6Statistics"];
+            this.relationFK_NetStatDataRecord_TCPStatisticsIPv4 = this.Relations["FK_NetStatDataRecord_TCPStatisticsIPv4"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +368,126 @@ namespace NetStatWPF.Data {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableMainTable = new MainTableDataTable();
             base.Tables.Add(this.tableMainTable);
+            this.tableNetStatDataRecordTable = new NetStatDataRecordTableDataTable();
+            base.Tables.Add(this.tableNetStatDataRecordTable);
+            this.tableIPv4StatisticsTable = new IPv4StatisticsTableDataTable();
+            base.Tables.Add(this.tableIPv4StatisticsTable);
+            this.tableIPv6StatisticsTable = new IPv6StatisticsTableDataTable();
+            base.Tables.Add(this.tableIPv6StatisticsTable);
+            this.tableICMPv4StatisticsTable = new ICMPv4StatisticsTableDataTable();
+            base.Tables.Add(this.tableICMPv4StatisticsTable);
+            this.tableICMPv6StatisticsTable = new ICMPv6StatisticsTableDataTable();
+            base.Tables.Add(this.tableICMPv6StatisticsTable);
+            this.tableTCPStatisticsIPv4Table = new TCPStatisticsIPv4TableDataTable();
+            base.Tables.Add(this.tableTCPStatisticsIPv4Table);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_MainTable_NetStatDataRecord", new global::System.Data.DataColumn[] {
+                        this.tableMainTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn});
+            this.tableNetStatDataRecordTable.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_NetStatDataRecord_IPv4Statistics", new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableIPv4StatisticsTable.IDColumn});
+            this.tableIPv4StatisticsTable.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_NetStatDataRecord_IPv6Statistics", new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableIPv6StatisticsTable.IDColumn});
+            this.tableIPv6StatisticsTable.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_NetStatDataRecord_ICMPv4Statistics", new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableICMPv4StatisticsTable.IDColumn});
+            this.tableICMPv4StatisticsTable.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_NetStatDataRecord_ICMPv6Statistics", new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableICMPv6StatisticsTable.IDColumn});
+            this.tableICMPv6StatisticsTable.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_NetStatDataRecord_TCPStatisticsIPv4", new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTCPStatisticsIPv4Table.IDColumn});
+            this.tableTCPStatisticsIPv4Table.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            this.relationFK_MainTable_NetStatDataRecord = new global::System.Data.DataRelation("FK_MainTable_NetStatDataRecord", new global::System.Data.DataColumn[] {
+                        this.tableMainTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn}, false);
+            this.Relations.Add(this.relationFK_MainTable_NetStatDataRecord);
+            this.relationFK_NetStatDataRecord_IPv4Statistics = new global::System.Data.DataRelation("FK_NetStatDataRecord_IPv4Statistics", new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableIPv4StatisticsTable.IDColumn}, false);
+            this.Relations.Add(this.relationFK_NetStatDataRecord_IPv4Statistics);
+            this.relationFK_NetStatDataRecord_IPv6Statistics = new global::System.Data.DataRelation("FK_NetStatDataRecord_IPv6Statistics", new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableIPv6StatisticsTable.IDColumn}, false);
+            this.Relations.Add(this.relationFK_NetStatDataRecord_IPv6Statistics);
+            this.relationFK_NetStatDataRecord_ICMPv4Statistics = new global::System.Data.DataRelation("FK_NetStatDataRecord_ICMPv4Statistics", new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableICMPv4StatisticsTable.IDColumn}, false);
+            this.Relations.Add(this.relationFK_NetStatDataRecord_ICMPv4Statistics);
+            this.relationFK_NetStatDataRecord_ICMPv6Statistics = new global::System.Data.DataRelation("FK_NetStatDataRecord_ICMPv6Statistics", new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableICMPv6StatisticsTable.IDColumn}, false);
+            this.Relations.Add(this.relationFK_NetStatDataRecord_ICMPv6Statistics);
+            this.relationFK_NetStatDataRecord_TCPStatisticsIPv4 = new global::System.Data.DataRelation("FK_NetStatDataRecord_TCPStatisticsIPv4", new global::System.Data.DataColumn[] {
+                        this.tableNetStatDataRecordTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTCPStatisticsIPv4Table.IDColumn}, false);
+            this.Relations.Add(this.relationFK_NetStatDataRecord_TCPStatisticsIPv4);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeMainTable() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeNetStatDataRecordTable() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeIPv4StatisticsTable() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeIPv6StatisticsTable() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeICMPv4StatisticsTable() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeICMPv6StatisticsTable() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeTCPStatisticsIPv4Table() {
             return false;
         }
         
@@ -271,6 +548,24 @@ namespace NetStatWPF.Data {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void MainTableRowChangeEventHandler(object sender, MainTableRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void NetStatDataRecordTableRowChangeEventHandler(object sender, NetStatDataRecordTableRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void IPv4StatisticsTableRowChangeEventHandler(object sender, IPv4StatisticsTableRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void IPv6StatisticsTableRowChangeEventHandler(object sender, IPv6StatisticsTableRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void ICMPv4StatisticsTableRowChangeEventHandler(object sender, ICMPv4StatisticsTableRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void ICMPv6StatisticsTableRowChangeEventHandler(object sender, ICMPv6StatisticsTableRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void TCPStatisticsIPv4TableRowChangeEventHandler(object sender, TCPStatisticsIPv4TableRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -562,6 +857,2021 @@ namespace NetStatWPF.Data {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class NetStatDataRecordTableDataTable : global::System.Data.TypedTableBase<NetStatDataRecordTableRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableDataTable() {
+                this.TableName = "NetStatDataRecordTable";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal NetStatDataRecordTableDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected NetStatDataRecordTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableRow this[int index] {
+                get {
+                    return ((NetStatDataRecordTableRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event NetStatDataRecordTableRowChangeEventHandler NetStatDataRecordTableRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event NetStatDataRecordTableRowChangeEventHandler NetStatDataRecordTableRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event NetStatDataRecordTableRowChangeEventHandler NetStatDataRecordTableRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event NetStatDataRecordTableRowChangeEventHandler NetStatDataRecordTableRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddNetStatDataRecordTableRow(NetStatDataRecordTableRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableRow AddNetStatDataRecordTableRow(MainTableRow parentMainTableRowByFK_MainTable_NetStatDataRecord) {
+                NetStatDataRecordTableRow rowNetStatDataRecordTableRow = ((NetStatDataRecordTableRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null};
+                if ((parentMainTableRowByFK_MainTable_NetStatDataRecord != null)) {
+                    columnValuesArray[0] = parentMainTableRowByFK_MainTable_NetStatDataRecord[0];
+                }
+                rowNetStatDataRecordTableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowNetStatDataRecordTableRow);
+                return rowNetStatDataRecordTableRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                NetStatDataRecordTableDataTable cln = ((NetStatDataRecordTableDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new NetStatDataRecordTableDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, false));
+                this.columnID.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableRow NewNetStatDataRecordTableRow() {
+                return ((NetStatDataRecordTableRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new NetStatDataRecordTableRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(NetStatDataRecordTableRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.NetStatDataRecordTableRowChanged != null)) {
+                    this.NetStatDataRecordTableRowChanged(this, new NetStatDataRecordTableRowChangeEvent(((NetStatDataRecordTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.NetStatDataRecordTableRowChanging != null)) {
+                    this.NetStatDataRecordTableRowChanging(this, new NetStatDataRecordTableRowChangeEvent(((NetStatDataRecordTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.NetStatDataRecordTableRowDeleted != null)) {
+                    this.NetStatDataRecordTableRowDeleted(this, new NetStatDataRecordTableRowChangeEvent(((NetStatDataRecordTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.NetStatDataRecordTableRowDeleting != null)) {
+                    this.NetStatDataRecordTableRowDeleting(this, new NetStatDataRecordTableRowChangeEvent(((NetStatDataRecordTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveNetStatDataRecordTableRow(NetStatDataRecordTableRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                NetStatDataSet ds = new NetStatDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "NetStatDataRecordTableDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class IPv4StatisticsTableDataTable : global::System.Data.TypedTableBase<IPv4StatisticsTableRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnPacketsReceived;
+            
+            private global::System.Data.DataColumn columnReceivedHeaderErrors;
+            
+            private global::System.Data.DataColumn columnReceivedAddressErrors;
+            
+            private global::System.Data.DataColumn columnDatagramsForwarded;
+            
+            private global::System.Data.DataColumn columnUnknownProtocolsReceived;
+            
+            private global::System.Data.DataColumn columnReceivedPacketsDiscarded;
+            
+            private global::System.Data.DataColumn columnReceivedPacketsDelivered;
+            
+            private global::System.Data.DataColumn columnOutputRequests;
+            
+            private global::System.Data.DataColumn columnRoutingDiscards;
+            
+            private global::System.Data.DataColumn columnDiscardedOutputPackets;
+            
+            private global::System.Data.DataColumn columnOutputPacketNoRoute;
+            
+            private global::System.Data.DataColumn columnReassemblyRequired;
+            
+            private global::System.Data.DataColumn columnReassemblySuccessful;
+            
+            private global::System.Data.DataColumn columnReassemblyFailures;
+            
+            private global::System.Data.DataColumn columnDatagramsSuccessfullyFragmented;
+            
+            private global::System.Data.DataColumn columnDatagramsFailingFragmentation;
+            
+            private global::System.Data.DataColumn columnFragmentsCreated;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv4StatisticsTableDataTable() {
+                this.TableName = "IPv4StatisticsTable";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal IPv4StatisticsTableDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected IPv4StatisticsTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PacketsReceivedColumn {
+                get {
+                    return this.columnPacketsReceived;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReceivedHeaderErrorsColumn {
+                get {
+                    return this.columnReceivedHeaderErrors;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReceivedAddressErrorsColumn {
+                get {
+                    return this.columnReceivedAddressErrors;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DatagramsForwardedColumn {
+                get {
+                    return this.columnDatagramsForwarded;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnknownProtocolsReceivedColumn {
+                get {
+                    return this.columnUnknownProtocolsReceived;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReceivedPacketsDiscardedColumn {
+                get {
+                    return this.columnReceivedPacketsDiscarded;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReceivedPacketsDeliveredColumn {
+                get {
+                    return this.columnReceivedPacketsDelivered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OutputRequestsColumn {
+                get {
+                    return this.columnOutputRequests;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RoutingDiscardsColumn {
+                get {
+                    return this.columnRoutingDiscards;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DiscardedOutputPacketsColumn {
+                get {
+                    return this.columnDiscardedOutputPackets;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OutputPacketNoRouteColumn {
+                get {
+                    return this.columnOutputPacketNoRoute;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReassemblyRequiredColumn {
+                get {
+                    return this.columnReassemblyRequired;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReassemblySuccessfulColumn {
+                get {
+                    return this.columnReassemblySuccessful;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReassemblyFailuresColumn {
+                get {
+                    return this.columnReassemblyFailures;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DatagramsSuccessfullyFragmentedColumn {
+                get {
+                    return this.columnDatagramsSuccessfullyFragmented;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DatagramsFailingFragmentationColumn {
+                get {
+                    return this.columnDatagramsFailingFragmentation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FragmentsCreatedColumn {
+                get {
+                    return this.columnFragmentsCreated;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv4StatisticsTableRow this[int index] {
+                get {
+                    return ((IPv4StatisticsTableRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event IPv4StatisticsTableRowChangeEventHandler IPv4StatisticsTableRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event IPv4StatisticsTableRowChangeEventHandler IPv4StatisticsTableRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event IPv4StatisticsTableRowChangeEventHandler IPv4StatisticsTableRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event IPv4StatisticsTableRowChangeEventHandler IPv4StatisticsTableRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddIPv4StatisticsTableRow(IPv4StatisticsTableRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv4StatisticsTableRow AddIPv4StatisticsTableRow(
+                        NetStatDataRecordTableRow parentNetStatDataRecordTableRowByFK_NetStatDataRecord_IPv4Statistics, 
+                        long PacketsReceived, 
+                        long ReceivedHeaderErrors, 
+                        long ReceivedAddressErrors, 
+                        long DatagramsForwarded, 
+                        long UnknownProtocolsReceived, 
+                        long ReceivedPacketsDiscarded, 
+                        long ReceivedPacketsDelivered, 
+                        long OutputRequests, 
+                        long RoutingDiscards, 
+                        long DiscardedOutputPackets, 
+                        long OutputPacketNoRoute, 
+                        long ReassemblyRequired, 
+                        long ReassemblySuccessful, 
+                        long ReassemblyFailures, 
+                        long DatagramsSuccessfullyFragmented, 
+                        long DatagramsFailingFragmentation, 
+                        long FragmentsCreated) {
+                IPv4StatisticsTableRow rowIPv4StatisticsTableRow = ((IPv4StatisticsTableRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        PacketsReceived,
+                        ReceivedHeaderErrors,
+                        ReceivedAddressErrors,
+                        DatagramsForwarded,
+                        UnknownProtocolsReceived,
+                        ReceivedPacketsDiscarded,
+                        ReceivedPacketsDelivered,
+                        OutputRequests,
+                        RoutingDiscards,
+                        DiscardedOutputPackets,
+                        OutputPacketNoRoute,
+                        ReassemblyRequired,
+                        ReassemblySuccessful,
+                        ReassemblyFailures,
+                        DatagramsSuccessfullyFragmented,
+                        DatagramsFailingFragmentation,
+                        FragmentsCreated};
+                if ((parentNetStatDataRecordTableRowByFK_NetStatDataRecord_IPv4Statistics != null)) {
+                    columnValuesArray[0] = parentNetStatDataRecordTableRowByFK_NetStatDataRecord_IPv4Statistics[0];
+                }
+                rowIPv4StatisticsTableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowIPv4StatisticsTableRow);
+                return rowIPv4StatisticsTableRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                IPv4StatisticsTableDataTable cln = ((IPv4StatisticsTableDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new IPv4StatisticsTableDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnPacketsReceived = base.Columns["PacketsReceived"];
+                this.columnReceivedHeaderErrors = base.Columns["ReceivedHeaderErrors"];
+                this.columnReceivedAddressErrors = base.Columns["ReceivedAddressErrors"];
+                this.columnDatagramsForwarded = base.Columns["DatagramsForwarded"];
+                this.columnUnknownProtocolsReceived = base.Columns["UnknownProtocolsReceived"];
+                this.columnReceivedPacketsDiscarded = base.Columns["ReceivedPacketsDiscarded"];
+                this.columnReceivedPacketsDelivered = base.Columns["ReceivedPacketsDelivered"];
+                this.columnOutputRequests = base.Columns["OutputRequests"];
+                this.columnRoutingDiscards = base.Columns["RoutingDiscards"];
+                this.columnDiscardedOutputPackets = base.Columns["DiscardedOutputPackets"];
+                this.columnOutputPacketNoRoute = base.Columns["OutputPacketNoRoute"];
+                this.columnReassemblyRequired = base.Columns["ReassemblyRequired"];
+                this.columnReassemblySuccessful = base.Columns["ReassemblySuccessful"];
+                this.columnReassemblyFailures = base.Columns["ReassemblyFailures"];
+                this.columnDatagramsSuccessfullyFragmented = base.Columns["DatagramsSuccessfullyFragmented"];
+                this.columnDatagramsFailingFragmentation = base.Columns["DatagramsFailingFragmentation"];
+                this.columnFragmentsCreated = base.Columns["FragmentsCreated"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnPacketsReceived = new global::System.Data.DataColumn("PacketsReceived", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPacketsReceived);
+                this.columnReceivedHeaderErrors = new global::System.Data.DataColumn("ReceivedHeaderErrors", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReceivedHeaderErrors);
+                this.columnReceivedAddressErrors = new global::System.Data.DataColumn("ReceivedAddressErrors", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReceivedAddressErrors);
+                this.columnDatagramsForwarded = new global::System.Data.DataColumn("DatagramsForwarded", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatagramsForwarded);
+                this.columnUnknownProtocolsReceived = new global::System.Data.DataColumn("UnknownProtocolsReceived", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnknownProtocolsReceived);
+                this.columnReceivedPacketsDiscarded = new global::System.Data.DataColumn("ReceivedPacketsDiscarded", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReceivedPacketsDiscarded);
+                this.columnReceivedPacketsDelivered = new global::System.Data.DataColumn("ReceivedPacketsDelivered", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReceivedPacketsDelivered);
+                this.columnOutputRequests = new global::System.Data.DataColumn("OutputRequests", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOutputRequests);
+                this.columnRoutingDiscards = new global::System.Data.DataColumn("RoutingDiscards", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoutingDiscards);
+                this.columnDiscardedOutputPackets = new global::System.Data.DataColumn("DiscardedOutputPackets", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDiscardedOutputPackets);
+                this.columnOutputPacketNoRoute = new global::System.Data.DataColumn("OutputPacketNoRoute", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOutputPacketNoRoute);
+                this.columnReassemblyRequired = new global::System.Data.DataColumn("ReassemblyRequired", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReassemblyRequired);
+                this.columnReassemblySuccessful = new global::System.Data.DataColumn("ReassemblySuccessful", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReassemblySuccessful);
+                this.columnReassemblyFailures = new global::System.Data.DataColumn("ReassemblyFailures", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReassemblyFailures);
+                this.columnDatagramsSuccessfullyFragmented = new global::System.Data.DataColumn("DatagramsSuccessfullyFragmented", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatagramsSuccessfullyFragmented);
+                this.columnDatagramsFailingFragmentation = new global::System.Data.DataColumn("DatagramsFailingFragmentation", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatagramsFailingFragmentation);
+                this.columnFragmentsCreated = new global::System.Data.DataColumn("FragmentsCreated", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFragmentsCreated);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv4StatisticsTableRow NewIPv4StatisticsTableRow() {
+                return ((IPv4StatisticsTableRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new IPv4StatisticsTableRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(IPv4StatisticsTableRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.IPv4StatisticsTableRowChanged != null)) {
+                    this.IPv4StatisticsTableRowChanged(this, new IPv4StatisticsTableRowChangeEvent(((IPv4StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.IPv4StatisticsTableRowChanging != null)) {
+                    this.IPv4StatisticsTableRowChanging(this, new IPv4StatisticsTableRowChangeEvent(((IPv4StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.IPv4StatisticsTableRowDeleted != null)) {
+                    this.IPv4StatisticsTableRowDeleted(this, new IPv4StatisticsTableRowChangeEvent(((IPv4StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.IPv4StatisticsTableRowDeleting != null)) {
+                    this.IPv4StatisticsTableRowDeleting(this, new IPv4StatisticsTableRowChangeEvent(((IPv4StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveIPv4StatisticsTableRow(IPv4StatisticsTableRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                NetStatDataSet ds = new NetStatDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "IPv4StatisticsTableDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class IPv6StatisticsTableDataTable : global::System.Data.TypedTableBase<IPv6StatisticsTableRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnPacketsReceived;
+            
+            private global::System.Data.DataColumn columnReceivedHeaderErrors;
+            
+            private global::System.Data.DataColumn columnReceivedAddressErrors;
+            
+            private global::System.Data.DataColumn columnDatagramsForwarded;
+            
+            private global::System.Data.DataColumn columnUnknownProtocolsReceived;
+            
+            private global::System.Data.DataColumn columnReceivedPacketsDiscarded;
+            
+            private global::System.Data.DataColumn columnReceivedPacketsDelivered;
+            
+            private global::System.Data.DataColumn columnOutputRequests;
+            
+            private global::System.Data.DataColumn columnRoutingDiscards;
+            
+            private global::System.Data.DataColumn columnDiscardedOutputPackets;
+            
+            private global::System.Data.DataColumn columnOutputPacketNoRoute;
+            
+            private global::System.Data.DataColumn columnReassemblyRequired;
+            
+            private global::System.Data.DataColumn columnReassemblySuccessful;
+            
+            private global::System.Data.DataColumn columnReassemblyFailures;
+            
+            private global::System.Data.DataColumn columnDatagramsSuccessfullyFragmented;
+            
+            private global::System.Data.DataColumn columnDatagramsFailingFragmentation;
+            
+            private global::System.Data.DataColumn columnFragmentsCreated;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv6StatisticsTableDataTable() {
+                this.TableName = "IPv6StatisticsTable";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal IPv6StatisticsTableDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected IPv6StatisticsTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PacketsReceivedColumn {
+                get {
+                    return this.columnPacketsReceived;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReceivedHeaderErrorsColumn {
+                get {
+                    return this.columnReceivedHeaderErrors;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReceivedAddressErrorsColumn {
+                get {
+                    return this.columnReceivedAddressErrors;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DatagramsForwardedColumn {
+                get {
+                    return this.columnDatagramsForwarded;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnknownProtocolsReceivedColumn {
+                get {
+                    return this.columnUnknownProtocolsReceived;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReceivedPacketsDiscardedColumn {
+                get {
+                    return this.columnReceivedPacketsDiscarded;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReceivedPacketsDeliveredColumn {
+                get {
+                    return this.columnReceivedPacketsDelivered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OutputRequestsColumn {
+                get {
+                    return this.columnOutputRequests;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RoutingDiscardsColumn {
+                get {
+                    return this.columnRoutingDiscards;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DiscardedOutputPacketsColumn {
+                get {
+                    return this.columnDiscardedOutputPackets;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OutputPacketNoRouteColumn {
+                get {
+                    return this.columnOutputPacketNoRoute;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReassemblyRequiredColumn {
+                get {
+                    return this.columnReassemblyRequired;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReassemblySuccessfulColumn {
+                get {
+                    return this.columnReassemblySuccessful;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReassemblyFailuresColumn {
+                get {
+                    return this.columnReassemblyFailures;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DatagramsSuccessfullyFragmentedColumn {
+                get {
+                    return this.columnDatagramsSuccessfullyFragmented;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DatagramsFailingFragmentationColumn {
+                get {
+                    return this.columnDatagramsFailingFragmentation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FragmentsCreatedColumn {
+                get {
+                    return this.columnFragmentsCreated;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv6StatisticsTableRow this[int index] {
+                get {
+                    return ((IPv6StatisticsTableRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event IPv6StatisticsTableRowChangeEventHandler IPv6StatisticsTableRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event IPv6StatisticsTableRowChangeEventHandler IPv6StatisticsTableRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event IPv6StatisticsTableRowChangeEventHandler IPv6StatisticsTableRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event IPv6StatisticsTableRowChangeEventHandler IPv6StatisticsTableRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddIPv6StatisticsTableRow(IPv6StatisticsTableRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv6StatisticsTableRow AddIPv6StatisticsTableRow(
+                        NetStatDataRecordTableRow parentNetStatDataRecordTableRowByFK_NetStatDataRecord_IPv6Statistics, 
+                        long PacketsReceived, 
+                        long ReceivedHeaderErrors, 
+                        long ReceivedAddressErrors, 
+                        long DatagramsForwarded, 
+                        long UnknownProtocolsReceived, 
+                        long ReceivedPacketsDiscarded, 
+                        long ReceivedPacketsDelivered, 
+                        long OutputRequests, 
+                        long RoutingDiscards, 
+                        long DiscardedOutputPackets, 
+                        long OutputPacketNoRoute, 
+                        long ReassemblyRequired, 
+                        long ReassemblySuccessful, 
+                        long ReassemblyFailures, 
+                        long DatagramsSuccessfullyFragmented, 
+                        long DatagramsFailingFragmentation, 
+                        long FragmentsCreated) {
+                IPv6StatisticsTableRow rowIPv6StatisticsTableRow = ((IPv6StatisticsTableRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        PacketsReceived,
+                        ReceivedHeaderErrors,
+                        ReceivedAddressErrors,
+                        DatagramsForwarded,
+                        UnknownProtocolsReceived,
+                        ReceivedPacketsDiscarded,
+                        ReceivedPacketsDelivered,
+                        OutputRequests,
+                        RoutingDiscards,
+                        DiscardedOutputPackets,
+                        OutputPacketNoRoute,
+                        ReassemblyRequired,
+                        ReassemblySuccessful,
+                        ReassemblyFailures,
+                        DatagramsSuccessfullyFragmented,
+                        DatagramsFailingFragmentation,
+                        FragmentsCreated};
+                if ((parentNetStatDataRecordTableRowByFK_NetStatDataRecord_IPv6Statistics != null)) {
+                    columnValuesArray[0] = parentNetStatDataRecordTableRowByFK_NetStatDataRecord_IPv6Statistics[0];
+                }
+                rowIPv6StatisticsTableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowIPv6StatisticsTableRow);
+                return rowIPv6StatisticsTableRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                IPv6StatisticsTableDataTable cln = ((IPv6StatisticsTableDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new IPv6StatisticsTableDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnPacketsReceived = base.Columns["PacketsReceived"];
+                this.columnReceivedHeaderErrors = base.Columns["ReceivedHeaderErrors"];
+                this.columnReceivedAddressErrors = base.Columns["ReceivedAddressErrors"];
+                this.columnDatagramsForwarded = base.Columns["DatagramsForwarded"];
+                this.columnUnknownProtocolsReceived = base.Columns["UnknownProtocolsReceived"];
+                this.columnReceivedPacketsDiscarded = base.Columns["ReceivedPacketsDiscarded"];
+                this.columnReceivedPacketsDelivered = base.Columns["ReceivedPacketsDelivered"];
+                this.columnOutputRequests = base.Columns["OutputRequests"];
+                this.columnRoutingDiscards = base.Columns["RoutingDiscards"];
+                this.columnDiscardedOutputPackets = base.Columns["DiscardedOutputPackets"];
+                this.columnOutputPacketNoRoute = base.Columns["OutputPacketNoRoute"];
+                this.columnReassemblyRequired = base.Columns["ReassemblyRequired"];
+                this.columnReassemblySuccessful = base.Columns["ReassemblySuccessful"];
+                this.columnReassemblyFailures = base.Columns["ReassemblyFailures"];
+                this.columnDatagramsSuccessfullyFragmented = base.Columns["DatagramsSuccessfullyFragmented"];
+                this.columnDatagramsFailingFragmentation = base.Columns["DatagramsFailingFragmentation"];
+                this.columnFragmentsCreated = base.Columns["FragmentsCreated"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnPacketsReceived = new global::System.Data.DataColumn("PacketsReceived", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPacketsReceived);
+                this.columnReceivedHeaderErrors = new global::System.Data.DataColumn("ReceivedHeaderErrors", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReceivedHeaderErrors);
+                this.columnReceivedAddressErrors = new global::System.Data.DataColumn("ReceivedAddressErrors", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReceivedAddressErrors);
+                this.columnDatagramsForwarded = new global::System.Data.DataColumn("DatagramsForwarded", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatagramsForwarded);
+                this.columnUnknownProtocolsReceived = new global::System.Data.DataColumn("UnknownProtocolsReceived", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnknownProtocolsReceived);
+                this.columnReceivedPacketsDiscarded = new global::System.Data.DataColumn("ReceivedPacketsDiscarded", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReceivedPacketsDiscarded);
+                this.columnReceivedPacketsDelivered = new global::System.Data.DataColumn("ReceivedPacketsDelivered", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReceivedPacketsDelivered);
+                this.columnOutputRequests = new global::System.Data.DataColumn("OutputRequests", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOutputRequests);
+                this.columnRoutingDiscards = new global::System.Data.DataColumn("RoutingDiscards", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoutingDiscards);
+                this.columnDiscardedOutputPackets = new global::System.Data.DataColumn("DiscardedOutputPackets", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDiscardedOutputPackets);
+                this.columnOutputPacketNoRoute = new global::System.Data.DataColumn("OutputPacketNoRoute", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOutputPacketNoRoute);
+                this.columnReassemblyRequired = new global::System.Data.DataColumn("ReassemblyRequired", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReassemblyRequired);
+                this.columnReassemblySuccessful = new global::System.Data.DataColumn("ReassemblySuccessful", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReassemblySuccessful);
+                this.columnReassemblyFailures = new global::System.Data.DataColumn("ReassemblyFailures", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReassemblyFailures);
+                this.columnDatagramsSuccessfullyFragmented = new global::System.Data.DataColumn("DatagramsSuccessfullyFragmented", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatagramsSuccessfullyFragmented);
+                this.columnDatagramsFailingFragmentation = new global::System.Data.DataColumn("DatagramsFailingFragmentation", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatagramsFailingFragmentation);
+                this.columnFragmentsCreated = new global::System.Data.DataColumn("FragmentsCreated", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFragmentsCreated);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv6StatisticsTableRow NewIPv6StatisticsTableRow() {
+                return ((IPv6StatisticsTableRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new IPv6StatisticsTableRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(IPv6StatisticsTableRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.IPv6StatisticsTableRowChanged != null)) {
+                    this.IPv6StatisticsTableRowChanged(this, new IPv6StatisticsTableRowChangeEvent(((IPv6StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.IPv6StatisticsTableRowChanging != null)) {
+                    this.IPv6StatisticsTableRowChanging(this, new IPv6StatisticsTableRowChangeEvent(((IPv6StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.IPv6StatisticsTableRowDeleted != null)) {
+                    this.IPv6StatisticsTableRowDeleted(this, new IPv6StatisticsTableRowChangeEvent(((IPv6StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.IPv6StatisticsTableRowDeleting != null)) {
+                    this.IPv6StatisticsTableRowDeleting(this, new IPv6StatisticsTableRowChangeEvent(((IPv6StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveIPv6StatisticsTableRow(IPv6StatisticsTableRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                NetStatDataSet ds = new NetStatDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "IPv6StatisticsTableDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ICMPv4StatisticsTableDataTable : global::System.Data.TypedTableBase<ICMPv4StatisticsTableRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv4StatisticsTableDataTable() {
+                this.TableName = "ICMPv4StatisticsTable";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal ICMPv4StatisticsTableDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected ICMPv4StatisticsTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv4StatisticsTableRow this[int index] {
+                get {
+                    return ((ICMPv4StatisticsTableRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ICMPv4StatisticsTableRowChangeEventHandler ICMPv4StatisticsTableRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ICMPv4StatisticsTableRowChangeEventHandler ICMPv4StatisticsTableRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ICMPv4StatisticsTableRowChangeEventHandler ICMPv4StatisticsTableRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ICMPv4StatisticsTableRowChangeEventHandler ICMPv4StatisticsTableRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddICMPv4StatisticsTableRow(ICMPv4StatisticsTableRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv4StatisticsTableRow AddICMPv4StatisticsTableRow(NetStatDataRecordTableRow parentNetStatDataRecordTableRowByFK_NetStatDataRecord_ICMPv4Statistics) {
+                ICMPv4StatisticsTableRow rowICMPv4StatisticsTableRow = ((ICMPv4StatisticsTableRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null};
+                if ((parentNetStatDataRecordTableRowByFK_NetStatDataRecord_ICMPv4Statistics != null)) {
+                    columnValuesArray[0] = parentNetStatDataRecordTableRowByFK_NetStatDataRecord_ICMPv4Statistics[0];
+                }
+                rowICMPv4StatisticsTableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowICMPv4StatisticsTableRow);
+                return rowICMPv4StatisticsTableRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ICMPv4StatisticsTableDataTable cln = ((ICMPv4StatisticsTableDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ICMPv4StatisticsTableDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv4StatisticsTableRow NewICMPv4StatisticsTableRow() {
+                return ((ICMPv4StatisticsTableRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ICMPv4StatisticsTableRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ICMPv4StatisticsTableRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ICMPv4StatisticsTableRowChanged != null)) {
+                    this.ICMPv4StatisticsTableRowChanged(this, new ICMPv4StatisticsTableRowChangeEvent(((ICMPv4StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ICMPv4StatisticsTableRowChanging != null)) {
+                    this.ICMPv4StatisticsTableRowChanging(this, new ICMPv4StatisticsTableRowChangeEvent(((ICMPv4StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ICMPv4StatisticsTableRowDeleted != null)) {
+                    this.ICMPv4StatisticsTableRowDeleted(this, new ICMPv4StatisticsTableRowChangeEvent(((ICMPv4StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ICMPv4StatisticsTableRowDeleting != null)) {
+                    this.ICMPv4StatisticsTableRowDeleting(this, new ICMPv4StatisticsTableRowChangeEvent(((ICMPv4StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveICMPv4StatisticsTableRow(ICMPv4StatisticsTableRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                NetStatDataSet ds = new NetStatDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ICMPv4StatisticsTableDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ICMPv6StatisticsTableDataTable : global::System.Data.TypedTableBase<ICMPv6StatisticsTableRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv6StatisticsTableDataTable() {
+                this.TableName = "ICMPv6StatisticsTable";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal ICMPv6StatisticsTableDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected ICMPv6StatisticsTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv6StatisticsTableRow this[int index] {
+                get {
+                    return ((ICMPv6StatisticsTableRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ICMPv6StatisticsTableRowChangeEventHandler ICMPv6StatisticsTableRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ICMPv6StatisticsTableRowChangeEventHandler ICMPv6StatisticsTableRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ICMPv6StatisticsTableRowChangeEventHandler ICMPv6StatisticsTableRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ICMPv6StatisticsTableRowChangeEventHandler ICMPv6StatisticsTableRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddICMPv6StatisticsTableRow(ICMPv6StatisticsTableRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv6StatisticsTableRow AddICMPv6StatisticsTableRow(NetStatDataRecordTableRow parentNetStatDataRecordTableRowByFK_NetStatDataRecord_ICMPv6Statistics) {
+                ICMPv6StatisticsTableRow rowICMPv6StatisticsTableRow = ((ICMPv6StatisticsTableRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null};
+                if ((parentNetStatDataRecordTableRowByFK_NetStatDataRecord_ICMPv6Statistics != null)) {
+                    columnValuesArray[0] = parentNetStatDataRecordTableRowByFK_NetStatDataRecord_ICMPv6Statistics[0];
+                }
+                rowICMPv6StatisticsTableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowICMPv6StatisticsTableRow);
+                return rowICMPv6StatisticsTableRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ICMPv6StatisticsTableDataTable cln = ((ICMPv6StatisticsTableDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ICMPv6StatisticsTableDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv6StatisticsTableRow NewICMPv6StatisticsTableRow() {
+                return ((ICMPv6StatisticsTableRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ICMPv6StatisticsTableRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ICMPv6StatisticsTableRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ICMPv6StatisticsTableRowChanged != null)) {
+                    this.ICMPv6StatisticsTableRowChanged(this, new ICMPv6StatisticsTableRowChangeEvent(((ICMPv6StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ICMPv6StatisticsTableRowChanging != null)) {
+                    this.ICMPv6StatisticsTableRowChanging(this, new ICMPv6StatisticsTableRowChangeEvent(((ICMPv6StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ICMPv6StatisticsTableRowDeleted != null)) {
+                    this.ICMPv6StatisticsTableRowDeleted(this, new ICMPv6StatisticsTableRowChangeEvent(((ICMPv6StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ICMPv6StatisticsTableRowDeleting != null)) {
+                    this.ICMPv6StatisticsTableRowDeleting(this, new ICMPv6StatisticsTableRowChangeEvent(((ICMPv6StatisticsTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveICMPv6StatisticsTableRow(ICMPv6StatisticsTableRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                NetStatDataSet ds = new NetStatDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ICMPv6StatisticsTableDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TCPStatisticsIPv4TableDataTable : global::System.Data.TypedTableBase<TCPStatisticsIPv4TableRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TCPStatisticsIPv4TableDataTable() {
+                this.TableName = "TCPStatisticsIPv4Table";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal TCPStatisticsIPv4TableDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected TCPStatisticsIPv4TableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TCPStatisticsIPv4TableRow this[int index] {
+                get {
+                    return ((TCPStatisticsIPv4TableRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TCPStatisticsIPv4TableRowChangeEventHandler TCPStatisticsIPv4TableRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TCPStatisticsIPv4TableRowChangeEventHandler TCPStatisticsIPv4TableRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TCPStatisticsIPv4TableRowChangeEventHandler TCPStatisticsIPv4TableRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TCPStatisticsIPv4TableRowChangeEventHandler TCPStatisticsIPv4TableRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddTCPStatisticsIPv4TableRow(TCPStatisticsIPv4TableRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TCPStatisticsIPv4TableRow AddTCPStatisticsIPv4TableRow(NetStatDataRecordTableRow parentNetStatDataRecordTableRowByFK_NetStatDataRecord_TCPStatisticsIPv4) {
+                TCPStatisticsIPv4TableRow rowTCPStatisticsIPv4TableRow = ((TCPStatisticsIPv4TableRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null};
+                if ((parentNetStatDataRecordTableRowByFK_NetStatDataRecord_TCPStatisticsIPv4 != null)) {
+                    columnValuesArray[0] = parentNetStatDataRecordTableRowByFK_NetStatDataRecord_TCPStatisticsIPv4[0];
+                }
+                rowTCPStatisticsIPv4TableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTCPStatisticsIPv4TableRow);
+                return rowTCPStatisticsIPv4TableRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TCPStatisticsIPv4TableDataTable cln = ((TCPStatisticsIPv4TableDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TCPStatisticsIPv4TableDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TCPStatisticsIPv4TableRow NewTCPStatisticsIPv4TableRow() {
+                return ((TCPStatisticsIPv4TableRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TCPStatisticsIPv4TableRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TCPStatisticsIPv4TableRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TCPStatisticsIPv4TableRowChanged != null)) {
+                    this.TCPStatisticsIPv4TableRowChanged(this, new TCPStatisticsIPv4TableRowChangeEvent(((TCPStatisticsIPv4TableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TCPStatisticsIPv4TableRowChanging != null)) {
+                    this.TCPStatisticsIPv4TableRowChanging(this, new TCPStatisticsIPv4TableRowChangeEvent(((TCPStatisticsIPv4TableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TCPStatisticsIPv4TableRowDeleted != null)) {
+                    this.TCPStatisticsIPv4TableRowDeleted(this, new TCPStatisticsIPv4TableRowChangeEvent(((TCPStatisticsIPv4TableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TCPStatisticsIPv4TableRowDeleting != null)) {
+                    this.TCPStatisticsIPv4TableRowDeleting(this, new TCPStatisticsIPv4TableRowChangeEvent(((TCPStatisticsIPv4TableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveTCPStatisticsIPv4TableRow(TCPStatisticsIPv4TableRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                NetStatDataSet ds = new NetStatDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TCPStatisticsIPv4TableDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class MainTableRow : global::System.Data.DataRow {
@@ -641,6 +2951,1376 @@ namespace NetStatWPF.Data {
             public void SetUnparsedOutputNull() {
                 this[this.tableMainTable.UnparsedOutputColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableRow[] GetNetStatDataRecordTableRows() {
+                if ((this.Table.ChildRelations["FK_MainTable_NetStatDataRecord"] == null)) {
+                    return new NetStatDataRecordTableRow[0];
+                }
+                else {
+                    return ((NetStatDataRecordTableRow[])(base.GetChildRows(this.Table.ChildRelations["FK_MainTable_NetStatDataRecord"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class NetStatDataRecordTableRow : global::System.Data.DataRow {
+            
+            private NetStatDataRecordTableDataTable tableNetStatDataRecordTable;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal NetStatDataRecordTableRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableNetStatDataRecordTable = ((NetStatDataRecordTableDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableNetStatDataRecordTable.IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'NetStatDataRecordTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNetStatDataRecordTable.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MainTableRow MainTableRow {
+                get {
+                    return ((MainTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_MainTable_NetStatDataRecord"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_MainTable_NetStatDataRecord"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIDNull() {
+                return this.IsNull(this.tableNetStatDataRecordTable.IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIDNull() {
+                this[this.tableNetStatDataRecordTable.IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TCPStatisticsIPv4TableRow[] GetTCPStatisticsIPv4TableRows() {
+                if ((this.Table.ChildRelations["FK_NetStatDataRecord_TCPStatisticsIPv4"] == null)) {
+                    return new TCPStatisticsIPv4TableRow[0];
+                }
+                else {
+                    return ((TCPStatisticsIPv4TableRow[])(base.GetChildRows(this.Table.ChildRelations["FK_NetStatDataRecord_TCPStatisticsIPv4"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv6StatisticsTableRow[] GetICMPv6StatisticsTableRows() {
+                if ((this.Table.ChildRelations["FK_NetStatDataRecord_ICMPv6Statistics"] == null)) {
+                    return new ICMPv6StatisticsTableRow[0];
+                }
+                else {
+                    return ((ICMPv6StatisticsTableRow[])(base.GetChildRows(this.Table.ChildRelations["FK_NetStatDataRecord_ICMPv6Statistics"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv4StatisticsTableRow[] GetICMPv4StatisticsTableRows() {
+                if ((this.Table.ChildRelations["FK_NetStatDataRecord_ICMPv4Statistics"] == null)) {
+                    return new ICMPv4StatisticsTableRow[0];
+                }
+                else {
+                    return ((ICMPv4StatisticsTableRow[])(base.GetChildRows(this.Table.ChildRelations["FK_NetStatDataRecord_ICMPv4Statistics"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv6StatisticsTableRow[] GetIPv6StatisticsTableRows() {
+                if ((this.Table.ChildRelations["FK_NetStatDataRecord_IPv6Statistics"] == null)) {
+                    return new IPv6StatisticsTableRow[0];
+                }
+                else {
+                    return ((IPv6StatisticsTableRow[])(base.GetChildRows(this.Table.ChildRelations["FK_NetStatDataRecord_IPv6Statistics"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv4StatisticsTableRow[] GetIPv4StatisticsTableRows() {
+                if ((this.Table.ChildRelations["FK_NetStatDataRecord_IPv4Statistics"] == null)) {
+                    return new IPv4StatisticsTableRow[0];
+                }
+                else {
+                    return ((IPv4StatisticsTableRow[])(base.GetChildRows(this.Table.ChildRelations["FK_NetStatDataRecord_IPv4Statistics"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class IPv4StatisticsTableRow : global::System.Data.DataRow {
+            
+            private IPv4StatisticsTableDataTable tableIPv4StatisticsTable;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal IPv4StatisticsTableRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableIPv4StatisticsTable = ((IPv4StatisticsTableDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'IPv4StatisticsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long PacketsReceived {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.PacketsReceivedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PacketsReceived\' in table \'IPv4StatisticsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.PacketsReceivedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReceivedHeaderErrors {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.ReceivedHeaderErrorsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReceivedHeaderErrors\' in table \'IPv4StatisticsTable\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.ReceivedHeaderErrorsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReceivedAddressErrors {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.ReceivedAddressErrorsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReceivedAddressErrors\' in table \'IPv4StatisticsTable\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.ReceivedAddressErrorsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long DatagramsForwarded {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.DatagramsForwardedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatagramsForwarded\' in table \'IPv4StatisticsTable\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.DatagramsForwardedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long UnknownProtocolsReceived {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.UnknownProtocolsReceivedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UnknownProtocolsReceived\' in table \'IPv4StatisticsTable\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.UnknownProtocolsReceivedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReceivedPacketsDiscarded {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.ReceivedPacketsDiscardedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReceivedPacketsDiscarded\' in table \'IPv4StatisticsTable\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.ReceivedPacketsDiscardedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReceivedPacketsDelivered {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.ReceivedPacketsDeliveredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReceivedPacketsDelivered\' in table \'IPv4StatisticsTable\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.ReceivedPacketsDeliveredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long OutputRequests {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.OutputRequestsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OutputRequests\' in table \'IPv4StatisticsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.OutputRequestsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long RoutingDiscards {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.RoutingDiscardsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RoutingDiscards\' in table \'IPv4StatisticsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.RoutingDiscardsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long DiscardedOutputPackets {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.DiscardedOutputPacketsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DiscardedOutputPackets\' in table \'IPv4StatisticsTable\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.DiscardedOutputPacketsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long OutputPacketNoRoute {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.OutputPacketNoRouteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OutputPacketNoRoute\' in table \'IPv4StatisticsTable\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.OutputPacketNoRouteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReassemblyRequired {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.ReassemblyRequiredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReassemblyRequired\' in table \'IPv4StatisticsTable\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.ReassemblyRequiredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReassemblySuccessful {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.ReassemblySuccessfulColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReassemblySuccessful\' in table \'IPv4StatisticsTable\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.ReassemblySuccessfulColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReassemblyFailures {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.ReassemblyFailuresColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReassemblyFailures\' in table \'IPv4StatisticsTable\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.ReassemblyFailuresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long DatagramsSuccessfullyFragmented {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.DatagramsSuccessfullyFragmentedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatagramsSuccessfullyFragmented\' in table \'IPv4StatisticsTa" +
+                                "ble\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.DatagramsSuccessfullyFragmentedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long DatagramsFailingFragmentation {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.DatagramsFailingFragmentationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatagramsFailingFragmentation\' in table \'IPv4StatisticsTabl" +
+                                "e\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.DatagramsFailingFragmentationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long FragmentsCreated {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv4StatisticsTable.FragmentsCreatedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FragmentsCreated\' in table \'IPv4StatisticsTable\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv4StatisticsTable.FragmentsCreatedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableRow NetStatDataRecordRow {
+                get {
+                    return ((NetStatDataRecordTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_NetStatDataRecord_IPv4Statistics"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_NetStatDataRecord_IPv4Statistics"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIDNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIDNull() {
+                this[this.tableIPv4StatisticsTable.IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPacketsReceivedNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.PacketsReceivedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPacketsReceivedNull() {
+                this[this.tableIPv4StatisticsTable.PacketsReceivedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReceivedHeaderErrorsNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.ReceivedHeaderErrorsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReceivedHeaderErrorsNull() {
+                this[this.tableIPv4StatisticsTable.ReceivedHeaderErrorsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReceivedAddressErrorsNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.ReceivedAddressErrorsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReceivedAddressErrorsNull() {
+                this[this.tableIPv4StatisticsTable.ReceivedAddressErrorsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDatagramsForwardedNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.DatagramsForwardedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDatagramsForwardedNull() {
+                this[this.tableIPv4StatisticsTable.DatagramsForwardedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsUnknownProtocolsReceivedNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.UnknownProtocolsReceivedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetUnknownProtocolsReceivedNull() {
+                this[this.tableIPv4StatisticsTable.UnknownProtocolsReceivedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReceivedPacketsDiscardedNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.ReceivedPacketsDiscardedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReceivedPacketsDiscardedNull() {
+                this[this.tableIPv4StatisticsTable.ReceivedPacketsDiscardedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReceivedPacketsDeliveredNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.ReceivedPacketsDeliveredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReceivedPacketsDeliveredNull() {
+                this[this.tableIPv4StatisticsTable.ReceivedPacketsDeliveredColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOutputRequestsNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.OutputRequestsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOutputRequestsNull() {
+                this[this.tableIPv4StatisticsTable.OutputRequestsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRoutingDiscardsNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.RoutingDiscardsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRoutingDiscardsNull() {
+                this[this.tableIPv4StatisticsTable.RoutingDiscardsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDiscardedOutputPacketsNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.DiscardedOutputPacketsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDiscardedOutputPacketsNull() {
+                this[this.tableIPv4StatisticsTable.DiscardedOutputPacketsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOutputPacketNoRouteNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.OutputPacketNoRouteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOutputPacketNoRouteNull() {
+                this[this.tableIPv4StatisticsTable.OutputPacketNoRouteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReassemblyRequiredNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.ReassemblyRequiredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReassemblyRequiredNull() {
+                this[this.tableIPv4StatisticsTable.ReassemblyRequiredColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReassemblySuccessfulNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.ReassemblySuccessfulColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReassemblySuccessfulNull() {
+                this[this.tableIPv4StatisticsTable.ReassemblySuccessfulColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReassemblyFailuresNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.ReassemblyFailuresColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReassemblyFailuresNull() {
+                this[this.tableIPv4StatisticsTable.ReassemblyFailuresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDatagramsSuccessfullyFragmentedNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.DatagramsSuccessfullyFragmentedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDatagramsSuccessfullyFragmentedNull() {
+                this[this.tableIPv4StatisticsTable.DatagramsSuccessfullyFragmentedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDatagramsFailingFragmentationNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.DatagramsFailingFragmentationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDatagramsFailingFragmentationNull() {
+                this[this.tableIPv4StatisticsTable.DatagramsFailingFragmentationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFragmentsCreatedNull() {
+                return this.IsNull(this.tableIPv4StatisticsTable.FragmentsCreatedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFragmentsCreatedNull() {
+                this[this.tableIPv4StatisticsTable.FragmentsCreatedColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class IPv6StatisticsTableRow : global::System.Data.DataRow {
+            
+            private IPv6StatisticsTableDataTable tableIPv6StatisticsTable;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal IPv6StatisticsTableRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableIPv6StatisticsTable = ((IPv6StatisticsTableDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'IPv6StatisticsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long PacketsReceived {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.PacketsReceivedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PacketsReceived\' in table \'IPv6StatisticsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.PacketsReceivedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReceivedHeaderErrors {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.ReceivedHeaderErrorsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReceivedHeaderErrors\' in table \'IPv6StatisticsTable\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.ReceivedHeaderErrorsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReceivedAddressErrors {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.ReceivedAddressErrorsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReceivedAddressErrors\' in table \'IPv6StatisticsTable\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.ReceivedAddressErrorsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long DatagramsForwarded {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.DatagramsForwardedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatagramsForwarded\' in table \'IPv6StatisticsTable\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.DatagramsForwardedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long UnknownProtocolsReceived {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.UnknownProtocolsReceivedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UnknownProtocolsReceived\' in table \'IPv6StatisticsTable\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.UnknownProtocolsReceivedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReceivedPacketsDiscarded {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.ReceivedPacketsDiscardedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReceivedPacketsDiscarded\' in table \'IPv6StatisticsTable\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.ReceivedPacketsDiscardedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReceivedPacketsDelivered {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.ReceivedPacketsDeliveredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReceivedPacketsDelivered\' in table \'IPv6StatisticsTable\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.ReceivedPacketsDeliveredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long OutputRequests {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.OutputRequestsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OutputRequests\' in table \'IPv6StatisticsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.OutputRequestsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long RoutingDiscards {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.RoutingDiscardsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RoutingDiscards\' in table \'IPv6StatisticsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.RoutingDiscardsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long DiscardedOutputPackets {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.DiscardedOutputPacketsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DiscardedOutputPackets\' in table \'IPv6StatisticsTable\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.DiscardedOutputPacketsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long OutputPacketNoRoute {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.OutputPacketNoRouteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OutputPacketNoRoute\' in table \'IPv6StatisticsTable\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.OutputPacketNoRouteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReassemblyRequired {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.ReassemblyRequiredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReassemblyRequired\' in table \'IPv6StatisticsTable\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.ReassemblyRequiredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReassemblySuccessful {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.ReassemblySuccessfulColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReassemblySuccessful\' in table \'IPv6StatisticsTable\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.ReassemblySuccessfulColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ReassemblyFailures {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.ReassemblyFailuresColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReassemblyFailures\' in table \'IPv6StatisticsTable\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.ReassemblyFailuresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long DatagramsSuccessfullyFragmented {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.DatagramsSuccessfullyFragmentedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatagramsSuccessfullyFragmented\' in table \'IPv6StatisticsTa" +
+                                "ble\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.DatagramsSuccessfullyFragmentedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long DatagramsFailingFragmentation {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.DatagramsFailingFragmentationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatagramsFailingFragmentation\' in table \'IPv6StatisticsTabl" +
+                                "e\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.DatagramsFailingFragmentationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long FragmentsCreated {
+                get {
+                    try {
+                        return ((long)(this[this.tableIPv6StatisticsTable.FragmentsCreatedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FragmentsCreated\' in table \'IPv6StatisticsTable\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableIPv6StatisticsTable.FragmentsCreatedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableRow NetStatDataRecordRow {
+                get {
+                    return ((NetStatDataRecordTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_NetStatDataRecord_IPv6Statistics"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_NetStatDataRecord_IPv6Statistics"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIDNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIDNull() {
+                this[this.tableIPv6StatisticsTable.IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPacketsReceivedNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.PacketsReceivedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPacketsReceivedNull() {
+                this[this.tableIPv6StatisticsTable.PacketsReceivedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReceivedHeaderErrorsNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.ReceivedHeaderErrorsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReceivedHeaderErrorsNull() {
+                this[this.tableIPv6StatisticsTable.ReceivedHeaderErrorsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReceivedAddressErrorsNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.ReceivedAddressErrorsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReceivedAddressErrorsNull() {
+                this[this.tableIPv6StatisticsTable.ReceivedAddressErrorsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDatagramsForwardedNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.DatagramsForwardedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDatagramsForwardedNull() {
+                this[this.tableIPv6StatisticsTable.DatagramsForwardedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsUnknownProtocolsReceivedNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.UnknownProtocolsReceivedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetUnknownProtocolsReceivedNull() {
+                this[this.tableIPv6StatisticsTable.UnknownProtocolsReceivedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReceivedPacketsDiscardedNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.ReceivedPacketsDiscardedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReceivedPacketsDiscardedNull() {
+                this[this.tableIPv6StatisticsTable.ReceivedPacketsDiscardedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReceivedPacketsDeliveredNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.ReceivedPacketsDeliveredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReceivedPacketsDeliveredNull() {
+                this[this.tableIPv6StatisticsTable.ReceivedPacketsDeliveredColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOutputRequestsNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.OutputRequestsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOutputRequestsNull() {
+                this[this.tableIPv6StatisticsTable.OutputRequestsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRoutingDiscardsNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.RoutingDiscardsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRoutingDiscardsNull() {
+                this[this.tableIPv6StatisticsTable.RoutingDiscardsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDiscardedOutputPacketsNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.DiscardedOutputPacketsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDiscardedOutputPacketsNull() {
+                this[this.tableIPv6StatisticsTable.DiscardedOutputPacketsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOutputPacketNoRouteNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.OutputPacketNoRouteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOutputPacketNoRouteNull() {
+                this[this.tableIPv6StatisticsTable.OutputPacketNoRouteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReassemblyRequiredNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.ReassemblyRequiredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReassemblyRequiredNull() {
+                this[this.tableIPv6StatisticsTable.ReassemblyRequiredColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReassemblySuccessfulNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.ReassemblySuccessfulColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReassemblySuccessfulNull() {
+                this[this.tableIPv6StatisticsTable.ReassemblySuccessfulColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReassemblyFailuresNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.ReassemblyFailuresColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReassemblyFailuresNull() {
+                this[this.tableIPv6StatisticsTable.ReassemblyFailuresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDatagramsSuccessfullyFragmentedNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.DatagramsSuccessfullyFragmentedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDatagramsSuccessfullyFragmentedNull() {
+                this[this.tableIPv6StatisticsTable.DatagramsSuccessfullyFragmentedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDatagramsFailingFragmentationNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.DatagramsFailingFragmentationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDatagramsFailingFragmentationNull() {
+                this[this.tableIPv6StatisticsTable.DatagramsFailingFragmentationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFragmentsCreatedNull() {
+                return this.IsNull(this.tableIPv6StatisticsTable.FragmentsCreatedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFragmentsCreatedNull() {
+                this[this.tableIPv6StatisticsTable.FragmentsCreatedColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ICMPv4StatisticsTableRow : global::System.Data.DataRow {
+            
+            private ICMPv4StatisticsTableDataTable tableICMPv4StatisticsTable;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal ICMPv4StatisticsTableRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableICMPv4StatisticsTable = ((ICMPv4StatisticsTableDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableICMPv4StatisticsTable.IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'ICMPv4StatisticsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableICMPv4StatisticsTable.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableRow NetStatDataRecordRow {
+                get {
+                    return ((NetStatDataRecordTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_NetStatDataRecord_ICMPv4Statistics"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_NetStatDataRecord_ICMPv4Statistics"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIDNull() {
+                return this.IsNull(this.tableICMPv4StatisticsTable.IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIDNull() {
+                this[this.tableICMPv4StatisticsTable.IDColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ICMPv6StatisticsTableRow : global::System.Data.DataRow {
+            
+            private ICMPv6StatisticsTableDataTable tableICMPv6StatisticsTable;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal ICMPv6StatisticsTableRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableICMPv6StatisticsTable = ((ICMPv6StatisticsTableDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableICMPv6StatisticsTable.IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'ICMPv6StatisticsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableICMPv6StatisticsTable.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableRow NetStatDataRecordRow {
+                get {
+                    return ((NetStatDataRecordTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_NetStatDataRecord_ICMPv6Statistics"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_NetStatDataRecord_ICMPv6Statistics"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIDNull() {
+                return this.IsNull(this.tableICMPv6StatisticsTable.IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIDNull() {
+                this[this.tableICMPv6StatisticsTable.IDColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TCPStatisticsIPv4TableRow : global::System.Data.DataRow {
+            
+            private TCPStatisticsIPv4TableDataTable tableTCPStatisticsIPv4Table;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal TCPStatisticsIPv4TableRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTCPStatisticsIPv4Table = ((TCPStatisticsIPv4TableDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ID {
+                get {
+                    try {
+                        return ((long)(this[this.tableTCPStatisticsIPv4Table.IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'TCPStatisticsIPv4Table\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTCPStatisticsIPv4Table.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableRow NetStatDataRecordRow {
+                get {
+                    return ((NetStatDataRecordTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_NetStatDataRecord_TCPStatisticsIPv4"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_NetStatDataRecord_TCPStatisticsIPv4"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIDNull() {
+                return this.IsNull(this.tableTCPStatisticsIPv4Table.IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIDNull() {
+                this[this.tableTCPStatisticsIPv4Table.IDColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -663,6 +4343,210 @@ namespace NetStatWPF.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MainTableRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class NetStatDataRecordTableRowChangeEvent : global::System.EventArgs {
+            
+            private NetStatDataRecordTableRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableRowChangeEvent(NetStatDataRecordTableRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NetStatDataRecordTableRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class IPv4StatisticsTableRowChangeEvent : global::System.EventArgs {
+            
+            private IPv4StatisticsTableRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv4StatisticsTableRowChangeEvent(IPv4StatisticsTableRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv4StatisticsTableRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class IPv6StatisticsTableRowChangeEvent : global::System.EventArgs {
+            
+            private IPv6StatisticsTableRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv6StatisticsTableRowChangeEvent(IPv6StatisticsTableRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public IPv6StatisticsTableRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class ICMPv4StatisticsTableRowChangeEvent : global::System.EventArgs {
+            
+            private ICMPv4StatisticsTableRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv4StatisticsTableRowChangeEvent(ICMPv4StatisticsTableRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv4StatisticsTableRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class ICMPv6StatisticsTableRowChangeEvent : global::System.EventArgs {
+            
+            private ICMPv6StatisticsTableRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv6StatisticsTableRowChangeEvent(ICMPv6StatisticsTableRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ICMPv6StatisticsTableRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class TCPStatisticsIPv4TableRowChangeEvent : global::System.EventArgs {
+            
+            private TCPStatisticsIPv4TableRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TCPStatisticsIPv4TableRowChangeEvent(TCPStatisticsIPv4TableRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TCPStatisticsIPv4TableRow Row {
                 get {
                     return this.eventRow;
                 }

@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NetStatDataRecord.cs" />
+    <Compile Include="NetStatDataSet.cs">
+      <DependentUpon>NetStatDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NetStatDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

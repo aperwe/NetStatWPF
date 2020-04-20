@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NetStatWPF.Data
 {
+    /// <summary>
+    /// A record of parsed output from one call of 'NetStat -s' command.
+    /// </summary>
     public class NetStatDataRecord
     {
         public NetStatDataRecord()

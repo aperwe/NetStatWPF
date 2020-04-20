@@ -42,8 +42,20 @@ namespace NetStatWPF.Client
             //netStatCommand.WaitForExit();
             var output = netStatCommand.StandardOutput.ReadToEnd();
             Output.Text = output;
-            netStatDataSet.MainTable.AddMainTableRow(DateTime.Now, output);
+            CreateDataSetHierarchy(output);
             NumEntriesTextBlock.Text = string.Format("{0}", netStatDataSet.MainTable.Count);
+
+        }
+        void CreateDataSetHierarchy(string output)
+        {
+            var mainRow = netStatDataSet.MainTable.AddMainTableRow(DateTime.Now, output); //parent row
+
+            NetStatDataRecord parsedObject = NetStatOutputParser.ParseFromString(mainRow.UnparsedOutput); //parsed temporary object
+
+            var topRecord = netStatDataSet.NetStatDataRecordTable.AddNetStatDataRecordTableRow(mainRow);
+            var ipv4Record = netStatDataSet.IPv4StatisticsTable.AddIPv4StatisticsTableRow(topRecord, parsedObject.IPv4Statistics);
+            var ipv6Record = netStatDataSet.IPv6StatisticsTable.AddIPv6StatisticsTableRow(topRecord, parsedObject.IPv6Statistics);
+            
         }
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
