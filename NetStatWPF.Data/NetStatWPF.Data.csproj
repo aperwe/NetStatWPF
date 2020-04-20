@@ -47,6 +47,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NetStatDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="NetStatOutputParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
