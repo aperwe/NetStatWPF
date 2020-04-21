@@ -13,5 +13,10 @@ namespace NetStatWPF.Client
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            //Register SyncFusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQ0MzUzQDMxMzgyZTMxMmUzMENPdnNTdDFPRHJPeUc5cVBXVDRzU3ZzMGV0bExUekJ3YWE5aUg3TTVPaU09");
+        }
     }
 }

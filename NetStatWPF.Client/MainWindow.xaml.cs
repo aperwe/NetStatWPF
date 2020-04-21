@@ -67,5 +67,11 @@ namespace NetStatWPF.Client
         {
             netStatDataSet.WriteXml("NetStatWPF.db.xml");
         }
+
+        private void ChartBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Charts.DashboardChart dashboardChart = new Charts.DashboardChart();
+            dashboardChart.ShowDialog();
+        }
     }
 }
