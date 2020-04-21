@@ -79,6 +79,7 @@
     <Compile Include="Charts\DashboardChart.xaml.cs">
       <DependentUpon>DashboardChart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Charts\ViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

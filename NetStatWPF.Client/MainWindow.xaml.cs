@@ -71,6 +71,8 @@ namespace NetStatWPF.Client
         private void ChartBtn_Click(object sender, RoutedEventArgs e)
         {
             Charts.DashboardChart dashboardChart = new Charts.DashboardChart();
+            var viewModel = new Charts.ViewModel(netStatDataSet);
+            dashboardChart.DataContext = viewModel;
             dashboardChart.ShowDialog();
         }
     }
