@@ -57,16 +57,15 @@ namespace NetStatWPF.Data
         }
         public IEnumerable<IPv4OverTime> IPv4ViewOverTime()
         {
-            List<IPv4OverTime> retVal = new List<IPv4OverTime>()
-            { new IPv4OverTime{ When = DateTime.Now, PacketsReceived = 18},
-                new IPv4OverTime{When = DateTime.Now + TimeSpan.FromSeconds(77), PacketsReceived = 91}};
+            List<IPv4OverTime> retVal = new List<IPv4OverTime>();
+            var dupa = this.MainTable;
             return retVal;
-
         }
     }
     public class IPv4OverTime
     {
-        public DateTime When;
-        public Int64 PacketsReceived;
+        public Int64 ID { get; set; }
+        public DateTime When { get; set; }
+        public Int64 PacketsReceived { get; set; }
     }
 }

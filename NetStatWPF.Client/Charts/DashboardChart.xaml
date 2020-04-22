@@ -13,15 +13,15 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <chart:SfChart Grid.Row="0" Margin="0,8,8,0">
-            <chart:SfChart.PrimaryAxis>
-                <chart:TimeSpanAxis/>
+        <chart:SfChart Grid.Row="0" Margin="0,8,8,0" x:Name="ChartObject">
+            <!--<chart:SfChart.PrimaryAxis>
+                <chart:DateTimeAxis/>
             </chart:SfChart.PrimaryAxis>
             
             <chart:SfChart.SecondaryAxis>
                 <chart:NumericalAxis/>
-            </chart:SfChart.SecondaryAxis>
-            <chart:ColumnSeries ItemsSource="{Binding Data}" XBindingPath="TimeStamp" YBindingPath="PacketsReceived"/>
+            </chart:SfChart.SecondaryAxis>-->
+            <chart:ColumnSeries ItemsSource="{Binding Data}" XBindingPath="When" YBindingPath="PacketsReceived"/>
         </chart:SfChart>
 
         <StackPanel Grid.Row="1" Height="Auto" Orientation="Horizontal">
