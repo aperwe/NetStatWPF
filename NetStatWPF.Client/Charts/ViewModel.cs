@@ -20,7 +20,7 @@ namespace NetStatWPF.Client.Charts
                                             new IPv4OverTime { When = DateTime.Now + TimeSpan.FromMinutes(10), PacketsReceived = 929 },
                                             new IPv4OverTime { When = DateTime.Now + TimeSpan.FromMinutes(100), PacketsReceived = 311 },
                                         };
-
+            Data = rootData.IPv4ViewOverTime();
             //Data = rootData.IPv4ViewOverTime();
         }
     }

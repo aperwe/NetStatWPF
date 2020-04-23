@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NetStatWPF.Data
 {
@@ -57,9 +58,11 @@ namespace NetStatWPF.Data
         }
         public IEnumerable<IPv4OverTime> IPv4ViewOverTime()
         {
-            List<IPv4OverTime> retVal = new List<IPv4OverTime>();
-            var dupa = this.MainTable;
-            return retVal;
+            var pipa = from mainTableRow in MainTable.Cast<MainTableRow>()
+                       join netStatDataRecordTableRow in NetStatDataRecordTable.Cast<NetStatDataRecordTableRow>() on mainTableRow.ID equals netStatDataRecordTableRow.ID
+                       join ipv4StatisticsTableRow in IPv4StatisticsTable.Cast<IPv4StatisticsTableRow>() on netStatDataRecordTableRow.ID equals ipv4StatisticsTableRow.ID
+                       select new IPv4OverTime() { ID = mainTableRow.ID, When = mainTableRow.TimeStamp, PacketsReceived = ipv4StatisticsTableRow.PacketsReceived };
+            return pipa;
         }
     }
     public class IPv4OverTime

@@ -13,15 +13,16 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <chart:SfChart Grid.Row="0" Margin="0,8,8,0" x:Name="ChartObject">
-            <!--<chart:SfChart.PrimaryAxis>
+        <chart:SfChart Grid.Row="0" Margin="0,8,8,0" x:Name="ChartObject" Header="IPv4 Packets over time">
+            <chart:SfChart.PrimaryAxis>
                 <chart:DateTimeAxis/>
             </chart:SfChart.PrimaryAxis>
             
             <chart:SfChart.SecondaryAxis>
-                <chart:NumericalAxis/>
-            </chart:SfChart.SecondaryAxis>-->
+                <chart:NumericalAxis Minimum="90000000"/>
+            </chart:SfChart.SecondaryAxis>
             <chart:ColumnSeries ItemsSource="{Binding Data}" XBindingPath="When" YBindingPath="PacketsReceived"/>
+            <!--More info about styling this chart here: https://www.youtube.com/watch?time_continue=117&v=5b8nEevQPC8&feature=emb_logo -->
         </chart:SfChart>
 
         <StackPanel Grid.Row="1" Height="Auto" Orientation="Horizontal">
