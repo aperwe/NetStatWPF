@@ -10,6 +10,8 @@ namespace NetStatWPF.Test
         public void TestLicenseActivation()
         {
             string licenseKey = "MjQ0MzUzQDMxMzgyZTMxMmUzMENPdnNTdDFPRHJPeUc5cVBXVDRzU3ZzMGV0bExUekJ3YWE5aUg3TTVPaU09";
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+            Assert.IsTrue(true, "License registered successfully"); //Will not reach this if something fails.
         }
     }
 }
