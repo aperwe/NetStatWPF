@@ -11,17 +11,20 @@ namespace NetStatWPF.Client.Charts
     public class ViewModel
     {
         public IEnumerable<IPv4OverTime> Data { get; set; }
+        public double YAxisMin { get; private set; }
+        public double YAxisMax { get; private set; }
+
         public ViewModel(NetStatDataSet rootData)
         {
-            Data = new List<IPv4OverTime>
-                                        {
-                                            new IPv4OverTime { When = DateTime.Now, PacketsReceived = 17 },
-                                            new IPv4OverTime { When = DateTime.Now + TimeSpan.FromMinutes(1), PacketsReceived = 88 } ,
-                                            new IPv4OverTime { When = DateTime.Now + TimeSpan.FromMinutes(10), PacketsReceived = 929 },
-                                            new IPv4OverTime { When = DateTime.Now + TimeSpan.FromMinutes(100), PacketsReceived = 311 },
-                                        };
             Data = rootData.IPv4ViewOverTime();
-            //Data = rootData.IPv4ViewOverTime();
+            var sortedDescending = 
+            (from element in Data
+                        orderby element.PacketsReceived descending
+                        select element.PacketsReceived);
+
+            (YAxisMin, YAxisMax) = (sortedDescending.First(), sortedDescending.Last());
+            var delta = YAxisMax - YAxisMin;
+            (YAxisMin, YAxisMax) = (YAxisMin - 0.1 * delta, YAxisMax + 0.1 * delta);
         }
     }
 }

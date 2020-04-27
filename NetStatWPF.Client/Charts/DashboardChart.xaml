@@ -19,7 +19,9 @@
             </chart:SfChart.PrimaryAxis>
             
             <chart:SfChart.SecondaryAxis>
-                <chart:NumericalAxis Minimum="90000000"/>
+                <chart:NumericalAxis Minimum="{Binding Data, Path=YAxisMin}"
+                                     Maximum="{Binding Data, Path=YAxisMax}">
+                </chart:NumericalAxis>
             </chart:SfChart.SecondaryAxis>
             <chart:ColumnSeries ItemsSource="{Binding Data}" XBindingPath="When" YBindingPath="PacketsReceived"/>
             <!--More info about styling this chart here: https://www.youtube.com/watch?time_continue=117&v=5b8nEevQPC8&feature=emb_logo -->
