@@ -19,8 +19,8 @@
             </chart:SfChart.PrimaryAxis>
             
             <chart:SfChart.SecondaryAxis>
-                <chart:NumericalAxis Minimum="{Binding Data, Path=YAxisMin}"
-                                     Maximum="{Binding Data, Path=YAxisMax}">
+                <chart:NumericalAxis Minimum="{Binding YAxisMin}"
+                                     Maximum="{Binding YAxisMax}">
                 </chart:NumericalAxis>
             </chart:SfChart.SecondaryAxis>
             <chart:ColumnSeries ItemsSource="{Binding Data}" XBindingPath="When" YBindingPath="PacketsReceived"/>
