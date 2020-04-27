@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -31,6 +32,13 @@ namespace NetStatWPF.Client
 
         private void GetBtn_Click(object sender, RoutedEventArgs e)
         {
+            var output = ExecuteNetStatCommand();
+            Output.Text = output;
+            NumEntriesTextBlock.Text = string.Format("{0}", netStatDataSet.MainTable.Count);
+
+        }
+        string ExecuteNetStatCommand()
+        {
             var command = "netstat";
             var args = "-s";
             var psi = new ProcessStartInfo(command, args)
@@ -39,11 +47,9 @@ namespace NetStatWPF.Client
                 UseShellExecute = false
             };
             var netStatCommand = Process.Start(psi);
-            //netStatCommand.WaitForExit();
             var output = netStatCommand.StandardOutput.ReadToEnd();
-            Output.Text = output;
             CreateDataSetHierarchy(output);
-            NumEntriesTextBlock.Text = string.Format("{0}", netStatDataSet.MainTable.Count);
+            return output;
 
         }
         void CreateDataSetHierarchy(string output)
@@ -74,6 +80,24 @@ namespace NetStatWPF.Client
             Charts.DashboardChart dashboardChart = new Charts.DashboardChart() { DataContext = viewModel };
             dashboardChart.ShowDialog();
             dashboardChart.UpdateLayout();
+        }
+
+        private void GetAutoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var waitable = RunDupaXXX();
+
+        }
+        private async Task RunDupaXXX()
+        {
+            Task.Run(async () =>
+            {
+                foreach (int i in Enumerable.Range(1, 500))
+                {
+                    ExecuteNetStatCommand();
+                    await Task.Delay(3000);
+                }
+            });
+
         }
     }
 }

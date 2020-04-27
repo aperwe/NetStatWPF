@@ -27,4 +27,4 @@ namespace NetStatWPF.Client.Charts
             (YAxisMin, YAxisMax) = (YAxisMin - 0.1 * delta, YAxisMax + 0.1 * delta);
         }
     }
-}
+} 
